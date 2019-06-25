@@ -4,16 +4,35 @@
 .container{
  display:grid;
  /* grid-template-columns: 40% 30% 30% */
- grid-template: 300px 100px 100px /40% 30% 30%;
+ /* grid-template: 300px 100px 100px /40% 30% 30%; */
+ /*fr*/
+ /* grid-template: 300px 100px 100px /1fr 1fr 1fr; */
+ /* grid-template: 300px 100px 100px /repeat(3,1fr); */
+ /* grid-template: 300px 100px 100px /repeat(3,minmax(200px,1fr)); */
+ grid-template: 300px 100px 100px / minmax(200px,1fr) 1fr 1fr;
+
+
+ grid-gap: 10px;
+ /* grid-gap: 10px 20px; */
+ /* grid-column-gap: 10px;
+ grid-row-gap: 10px */
 }
 .item{
 background: #61dafb;
 padding: 10px;
 border:1px solid red;
-
+grid-gap: 10px
 }
-.item:nth-of-type(4){
+.item:nth-of-type(3){
  background: blue;
+ overflow:auto;
+ /* display:subgrid; */
+ display:grid;
+ grid-template: 50px 50px 50px /200px 200px 200px;
+}
+
+.item .item{
+  background: yellow;
 }
 
 .App-logo {
